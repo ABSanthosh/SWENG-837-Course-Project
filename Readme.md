@@ -23,12 +23,6 @@ In the sections that follow, we’ll explore the problem statement, system requi
 9. [Cloud Deployment Diagram](#cloud-deployment-diagram)
 10. [Skeleton Classes and Tables Definition](#skeleton-classes-and-tables-definition)
 11. [Design Patterns](#design-patterns)
-12. [Documentation and Explanation](#documentation-and-explanation)
-    - Document
-    - Video Explanation
-13. [Bonus: Security Architecture Diagrams](#bonus-security-architecture-diagrams) _(Optional)_
-14. [Bonus: Non-Performance Requirements - Scalability/Speed](#bonus-non-performance-requirements-scalabilityspeed) _(Optional)_
-15. [Bonus: Non-Performance Requirements - Cost Optimization](#bonus-non-performance-requirements-cost-optimization) _(Optional)_
 
 ## Problem Statement and Requirements
 
@@ -84,7 +78,7 @@ The Barn application is designed to solve the problem of cluttered, ad-heavy, an
 
 ## UML Use Case Diagram
 
-The UML Use Case Diagram for Barn (Better Alternative to RSS News) provides a high-level visual representation of the system's actors and their interactions with the application. This diagram helps stakeholders understand how users and external systems engage with Barn to achieve its core functionalities, such as reading personalized news, managing preferences, and providing feedback.
+This UML Use Case Diagram for Barn gives a high-level visual representation of the system's actors and their interactions with the application. This diagram helps stakeholders understand how users and external systems engage with Barn to achieve its core functionalities, such as reading personalized news, managing preferences, and providing feedback.
 
 Below is the PlantUML for the Use Case Diagram, followed by a detailed explanation of each component.
 
@@ -150,13 +144,10 @@ end note
   - **View News Feed** depends on **RSS Feeds** for content, showing the integration with external news sources.
   - **Select Preferences** influences **View News Feed**, as preferences determine the content displayed.
 
-#### Purpose and Insights
-
-This diagram captures Barn’s core interactions in a simple, stakeholder-friendly way. It highlights the user-driven nature of the app, where personalization and ease of use are key, while showing dependencies on external systems (Google OAuth for security, RSS Feeds for content). For junior developers and analysts, this serves as a starting point to understand Barn’s scope and user flows before diving into detailed design.
 
 ## UML Domain Model
 
-The UML Domain Model for Barn (Better Alternative to RSS News) identifies the key entities and their relationships within the problem domain, independent of any specific technology or implementation details. This model focuses on the conceptual structure of the news aggregation system, capturing the essential objects and their interactions to represent the core problem of delivering personalized, distraction-free news. Below is the PlantUML code for the Domain Model, followed by a detailed explanation.
+This UML Domain Model for Barn helps us identify the key entities and their relationships within the problem domain, independent of any specific technology or implementation details. This model focuses on the conceptual structure of the news aggregation system, capturing the essential objects and their interactions to represent the core problem of delivering personalized, distraction-free news. Below is the PlantUML for the Domain Model, followed by a detailed explanation.
 
 ![DomainModel](DomainModel.png)
 
@@ -264,13 +255,10 @@ end note
   - Primary Keys (PK): Unique identifiers for each entity (e.g., `userId`, `articleId`).
   - Foreign Keys (FK): Link entities, such as `userId` in `Preference` or `rssFeedId` in `Article`.
 
-#### Purpose and Insights
-
-This Domain Model provides a technology-agnostic view of Barn’s core concepts, focusing on the problem domain of news aggregation and personalization. It’s a blueprint for understanding how users, preferences, articles, and feedback interrelate, making it easy for stakeholders like business analysts to grasp the system’s essence. For developers, it lays the groundwork for the Class Diagram by defining the key entities and relationships that will be implemented.
 
 ## UML Class Diagram
 
-The UML Class Diagram for Barn (Better Alternative to RSS News) translates the conceptual Domain Model into a detailed, implementation-ready set of classes, including attributes, methods, and relationships that reflect the system's functionality. This diagram bridges the gap between the problem domain and the technical design, providing a blueprint for developers to build the application using Object-Oriented principles. Below is the PlantUML code for the Class Diagram, followed by a detailed explanation.
+This UML Class Diagram for Barn translates the conceptual Domain Model into a detailed, implementation-ready set of classes, including attributes, methods, and relationships that reflect the system's functionality. This diagram bridges the gap between the problem domain and the technical design, providing a blueprint for developers to build the application using Object-Oriented principles. Below is the PlantUML for the Class Diagram, followed by a detailed explanation.
 
 ![ClassDiagram](ClassDiagram.png)
 
@@ -400,13 +388,10 @@ end note
   - **Article to Feedback (1:N)**: An article can receive feedback from multiple users.
   - **RSSFeed to Article (1:N)**: An RSS feed provides multiple articles.
 
-#### Purpose and Insights
-
-This Class Diagram provides a detailed, actionable design for Barn’s implementation. It specifies how entities from the Domain Model become classes with attributes and behaviors, ready for coding in a language like TypeScript with SvelteKit. The relationships and methods reflect Barn’s functionality (e.g., saving articles, providing feedback), making it a practical guide for developers while adhering to OOAD principles like encapsulation and association.
 
 ## UML Sequence Diagrams
 
-The UML Sequence Diagrams for Barn (Better Alternative to RSS News) illustrate the dynamic interactions between objects during key use cases, showing the message flow and sequence of operations over time. These diagrams are essential for understanding how Barn’s components collaborate to deliver its functionality. Below, I’ll provide PlantUML code for two critical use cases: **User Sign-In with Google OAuth** and **Viewing the News Feed**, followed by explanations.
+This UML Sequence Diagrams for Barn illustrate the dynamic interactions between objects during key use cases, showing the message flow and sequence of operations over time. These diagrams are essential for understanding how Barn’s components collaborate to deliver its functionality. Below, I’ve included PlantUML for two critical use cases: **User Sign-In with Google OAuth** and **Viewing the News Feed**, followed by explanations.
 
 ### Sequence Diagram 1: User Sign-In with Google OAuth
 
@@ -514,13 +499,10 @@ end note
   6. The App renders the feed and sends it to the Browser for display.
 - **Purpose**: This diagram highlights the news aggregation process, showing how Barn personalizes content and ensures fresh updates, aligning with its core mission.
 
-#### Purpose and Insights
-
-These Sequence Diagrams provide a step-by-step view of Barn’s critical operations—authentication and content delivery. They’re invaluable for developers to understand object interactions and for testers to verify flow correctness. The use of alternatives (e.g., valid/invalid session) adds clarity on error handling, making the design robust and practical for implementation.
 
 ## UML State Diagram
 
-The UML State Diagram for Barn (Better Alternative to RSS News) illustrates the possible states and transitions an object undergoes throughout its lifecycle within the system. For this section, we’ll focus on the **Article** object, as it’s central to Barn’s functionality—representing the news articles users interact with. This diagram shows how an article transitions through states based on system and user actions. Below is the PlantUML code, followed by a detailed explanation.
+This UML State Diagram for Barn illustrates the possible states and transitions an object undergoes throughout its lifecycle within the system. For this section, we’ll focus on the **Article** object, as it’s central to Barn’s functionality,representing the news articles users interact with. This diagram shows how an article transitions through states based on system and user actions. Below is the PlantUML, followed by a detailed explanation.
 
 ![StateDiagram](StateDiagram.png)
 
@@ -591,13 +573,11 @@ end note
   - **Available**: Represents the article’s active lifecycle where user interactions occur.
   - **Expired**: Indicates the end of visibility to maintain a fresh feed.
 
-#### Purpose and Insights
 
-This State Diagram provides a clear view of an Article’s lifecycle in Barn, from retrieval to expiration. It’s useful for developers to implement state management logic (e.g., in SvelteKit) and for testers to validate transitions (e.g., ensuring articles expire correctly). The nested states under **Available** reflect Barn’s interactive features—saving and feedback—while the expiration transition ensures the feed remains current, aligning with the app’s goal of distraction-free, relevant news delivery.
 
 ## UML Activity Diagram (Swimlane Diagram)
 
-The UML Activity Diagram with Swimlanes for Barn (Better Alternative to RSS News) visually represents the activities and flows within a specific process, highlighting the responsibilities of different actors using swimlanes. For this section, we’ll focus on the **User Onboarding Process**, a critical workflow where new users sign in and set up their preferences. This diagram clarifies the sequence of steps and the roles of the User, SvelteKit App, Google OAuth, and CockroachDB. Below is the PlantUML code, followed by a detailed explanation.
+This UML Activity Diagram with Swimlanes for Barn visually represents the activities and flows within a specific process, highlighting the responsibilities of different actors using swimlanes. For this section, we’ll focus on the **User Onboarding Process**, a critical workflow where new users sign in and set up their preferences. This diagram clarifies the sequence of steps and the roles of the User, SvelteKit App, Google OAuth, and CockroachDB. Below is the PlantUML , followed by a detailed explanation.
 
 ![Swimlane](Swimlane.svg)
 
@@ -687,15 +667,9 @@ stop
 
 - **Transitions**: The arrows (`->`) indicate the flow between actors, showing a sequential process with clear handoffs (e.g., from User to App, App to DB).
 
-#### Purpose and Insights
-
-This Activity Diagram maps out Barn’s onboarding process, a key user experience feature. The swimlanes clearly delineate responsibilities: the User drives input, the SvelteKit App manages logic and validation, Google OAuth ensures secure authentication, and CockroachDB persists data. For developers, it provides a workflow to implement, while testers can use it to verify each step (e.g., validation rules). It aligns with Barn’s goal of a smooth, intuitive setup for personalized news delivery.
-
-Below are the next four sections for your Barn (Better Alternative to RSS News) software design project in GitHub-flavored Markdown, using PlantUML for diagrams where applicable. These sections cover the UML Component Diagram, Cloud Deployment Diagram, Skeleton Classes and Tables Definition, and Design Patterns.
-
 ## UML Component Diagram
 
-The UML Component Diagram for Barn illustrates the system's physical components and their dependencies, providing a high-level architectural view. This diagram is crucial for understanding how Barn’s software modules interact and rely on external services.
+This UML Component Diagram for Barn illustrates the system's physical components and their dependencies, providing a high-level architectural view. This diagram is crucial for understanding how Barn’s software modules interact and rely on external services.
 
 ![ComponentDiagram](CompnentDiagram.png)
 
@@ -750,9 +724,6 @@ end note
   - SvelteKit App depends on CockroachDB for data persistence, Google OAuth for authentication, and RSS Feeds for content.
   - Netlify hosts the SvelteKit App, providing scalability.
 
-- **Purpose**: This diagram offers a modular view of Barn’s architecture, showing how it integrates internal components with external services, aiding developers in deployment planning.
-
----
 
 ## Cloud Deployment Diagram
 
@@ -810,7 +781,6 @@ end note
   - **Google OAuth API**: Accessed for authentication (dotted line indicates external dependency).
   - **RSS Feed Sources**: Polled for news content.
 
-- **Purpose**: This diagram shows Barn’s cloud deployment strategy, leveraging Netlify for hosting and CockroachDB for data reliability, ensuring stakeholders understand the scalable infrastructure.
 
 ---
 
@@ -925,8 +895,6 @@ CREATE TABLE RSSFeeds (
 
   - Classes (e.g., `User`, `Preference`, `Article`) outline key attributes and methods in TypeScript, aligning with the Class Diagram.
   - Tables define the schema for CockroachDB, including primary/foreign keys and constraints (e.g., `UNIQUE` email), ensuring data integrity.
-
-- **Purpose**: These skeletons provide a starting point for coding and database setup, making implementation straightforward for developers.
 
 ---
 
