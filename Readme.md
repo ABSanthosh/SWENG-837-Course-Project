@@ -23,6 +23,7 @@ In the sections that follow, we’ll explore the problem statement, system requi
 9. [Cloud Deployment Diagram](#cloud-deployment-diagram)
 10. [Skeleton Classes and Tables Definition](#skeleton-classes-and-tables-definition)
 11. [Design Patterns](#design-patterns)
+12. [Presentation](#presentation)
 
 ## Problem Statement and Requirements
 
@@ -915,3 +916,7 @@ Barn incorporates several design patterns and best practices to enhance its qual
 - **Justification**: Enables dynamic content personalization, aligning with Barn’s goal of tailored news delivery.
 
 - **Purpose**: These patterns ensure Barn is robust, modular, and adaptable, meeting course requirements while supporting its distraction-free, user-centric mission.
+
+## Presentation 
+
+[Watch the video](Presentation.mp4)
