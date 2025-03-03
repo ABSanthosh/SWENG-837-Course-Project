@@ -82,7 +82,7 @@ This UML Use Case Diagram for Barn gives a high-level visual representation of t
 
 Below is the PlantUML for the Use Case Diagram, followed by a detailed explanation of each component.
 
-![UsecaseDiagram](UsecaseDiagram.png)
+![UsecaseDiagram](images/UsecaseDiagram.png)
 
 <details>
 <summary>Click to Expand: PlantUML code</summary>
@@ -144,12 +144,11 @@ end note
   - **View News Feed** depends on **RSS Feeds** for content, showing the integration with external news sources.
   - **Select Preferences** influences **View News Feed**, as preferences determine the content displayed.
 
-
 ## UML Domain Model
 
 This UML Domain Model for Barn helps us identify the key entities and their relationships within the problem domain, independent of any specific technology or implementation details. This model focuses on the conceptual structure of the news aggregation system, capturing the essential objects and their interactions to represent the core problem of delivering personalized, distraction-free news. Below is the PlantUML for the Domain Model, followed by a detailed explanation.
 
-![DomainModel](DomainModel.png)
+![DomainModel](images/DomainModel.png)
 
 <details>
 <summary>Click to Expand: PlantUML code</summary>
@@ -255,12 +254,11 @@ end note
   - Primary Keys (PK): Unique identifiers for each entity (e.g., `userId`, `articleId`).
   - Foreign Keys (FK): Link entities, such as `userId` in `Preference` or `rssFeedId` in `Article`.
 
-
 ## UML Class Diagram
 
 This UML Class Diagram for Barn translates the conceptual Domain Model into a detailed, implementation-ready set of classes, including attributes, methods, and relationships that reflect the system's functionality. This diagram bridges the gap between the problem domain and the technical design, providing a blueprint for developers to build the application using Object-Oriented principles. Below is the PlantUML for the Class Diagram, followed by a detailed explanation.
 
-![ClassDiagram](ClassDiagram.png)
+![ClassDiagram](images/ClassDiagram.png)
 
 <details>
 <summary>Click to Expand: PlantUML code</summary>
@@ -388,14 +386,13 @@ end note
   - **Article to Feedback (1:N)**: An article can receive feedback from multiple users.
   - **RSSFeed to Article (1:N)**: An RSS feed provides multiple articles.
 
-
 ## UML Sequence Diagrams
 
 This UML Sequence Diagrams for Barn illustrate the dynamic interactions between objects during key use cases, showing the message flow and sequence of operations over time. These diagrams are essential for understanding how Barn’s components collaborate to deliver its functionality. Below, I’ve included PlantUML for two critical use cases: **User Sign-In with Google OAuth** and **Viewing the News Feed**, followed by explanations.
 
 ### Sequence Diagram 1: User Sign-In with Google OAuth
 
-![SeqDiagram1](SeqDiagram1.png)
+![SeqDiagram1](images/SeqDiagram1.png)
 
 <details>
 <summary>Click to Expand: PlantUML code</summary>
@@ -449,7 +446,7 @@ end note
 
 ### Sequence Diagram 2: Viewing the News Feed
 
-![SeqDiagram2](SeqDiagram2.png)
+![SeqDiagram2](images/SeqDiagram2.png)
 
 <details>
 <summary>Click to Expand: PlantUML code</summary>
@@ -499,12 +496,11 @@ end note
   6. The App renders the feed and sends it to the Browser for display.
 - **Purpose**: This diagram highlights the news aggregation process, showing how Barn personalizes content and ensures fresh updates, aligning with its core mission.
 
-
 ## UML State Diagram
 
 This UML State Diagram for Barn illustrates the possible states and transitions an object undergoes throughout its lifecycle within the system. For this section, we’ll focus on the **Article** object, as it’s central to Barn’s functionality,representing the news articles users interact with. This diagram shows how an article transitions through states based on system and user actions. Below is the PlantUML, followed by a detailed explanation.
 
-![StateDiagram](StateDiagram.png)
+![StateDiagram](images/StateDiagram.png)
 
 <details>
 <summary>Click to Expand: PlantUML code</summary>
@@ -573,13 +569,11 @@ end note
   - **Available**: Represents the article’s active lifecycle where user interactions occur.
   - **Expired**: Indicates the end of visibility to maintain a fresh feed.
 
-
-
 ## UML Activity Diagram (Swimlane Diagram)
 
 This UML Activity Diagram with Swimlanes for Barn visually represents the activities and flows within a specific process, highlighting the responsibilities of different actors using swimlanes. For this section, we’ll focus on the **User Onboarding Process**, a critical workflow where new users sign in and set up their preferences. This diagram clarifies the sequence of steps and the roles of the User, SvelteKit App, Google OAuth, and CockroachDB. Below is the PlantUML , followed by a detailed explanation.
 
-![Swimlane](Swimlane.svg)
+![Swimlane](images/Swimlane.svg)
 
 <details>
 <summary>Click to Expand: PlantUML code</summary>
@@ -671,7 +665,7 @@ stop
 
 This UML Component Diagram for Barn illustrates the system's physical components and their dependencies, providing a high-level architectural view. This diagram is crucial for understanding how Barn’s software modules interact and rely on external services.
 
-![ComponentDiagram](CompnentDiagram.png)
+![ComponentDiagram](images/CompnentDiagram.png)
 
 <details>
 <summary>Click to Expand: PlantUML code</summary>
@@ -724,12 +718,11 @@ end note
   - SvelteKit App depends on CockroachDB for data persistence, Google OAuth for authentication, and RSS Feeds for content.
   - Netlify hosts the SvelteKit App, providing scalability.
 
-
 ## Cloud Deployment Diagram
 
 The Cloud Deployment Diagram for Barn illustrates how its components are deployed on a cloud platform—here, Netlify and CockroachDB’s cloud offering—ensuring scalability and performance.
 
-![DeploymentDiagram](DeploymentDiagram.png)
+![DeploymentDiagram](images/DeploymentDiagram.png)
 
 <details>
 <summary>Click to Expand: PlantUML code</summary>
@@ -780,7 +773,6 @@ end note
 
   - **Google OAuth API**: Accessed for authentication (dotted line indicates external dependency).
   - **RSS Feed Sources**: Polled for news content.
-
 
 ---
 
